@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startScreen">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.resume.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/startScreen"
+        android:name="com.example.resume.StartScreen"
+        android:label="fragment_start_screen"
+        tools:layout="@layout/fragment_start_screen" >
+        <action
+            android:id="@+id/action_startScreen_to_stage1"
+            app:destination="@id/stage1" />
+        <action
+            android:id="@+id/action_startScreen_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/stage1"
+        android:name="com.example.resume.stage1"
+        android:label="fragment_stage1"
+        tools:layout="@layout/fragment_stage1" >
+        <action
+            android:id="@+id/action_stage1_to_stage2_contact"
+            app:destination="@id/stage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/stage2"
+        android:name="com.example.resume.stage2"
+        android:label="fragment_stage2"
+        tools:layout="@layout/fragment_stage2">
+        <action
+            android:id="@+id/action_stage2_contact_to_stage3"
+            app:destination="@id/stage3" />
+    </fragment>
+    <fragment
+        android:id="@+id/stage3"
+        android:name="com.example.resume.stage3"
+        android:label="fragment_stage3"
+        tools:layout="@layout/fragment_stage3" />
+</navigation>
